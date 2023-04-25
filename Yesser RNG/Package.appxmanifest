@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap mp genTemplate">
 
   <Identity
-    Name="ab760766-3e27-4849-b67a-f91b47714d11"
-    Publisher="CN=matej"
+    Name="25078YesserStudios.YesserRNG"
+    Publisher="CN=197534C1-4006-44A2-BFCD-CA87D3F8D948"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ab760766-3e27-4849-b67a-f91b47714d11" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="7756713b-aa58-465d-8ee9-d221b043cb6d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Yesser_RNG</DisplayName>
-    <PublisherDisplayName>matej</PublisherDisplayName>
+    <DisplayName>Yesser RNG</DisplayName>
+    <PublisherDisplayName>Yesser Studios</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
