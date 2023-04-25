@@ -186,6 +186,9 @@
   <data name="Min.Text" xml:space="preserve">
     <value>Lowest number:</value>
   </data>
+  <data name="NumberOfDice.Text" xml:space="preserve">
+    <value>How many dice:</value>
+  </data>
   <data name="Rolled.Text" xml:space="preserve">
     <value>You rolled:</value>
   </data>
