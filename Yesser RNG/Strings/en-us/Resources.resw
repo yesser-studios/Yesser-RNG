@@ -189,6 +189,12 @@
   <data name="NumberOfDice.Text" xml:space="preserve">
     <value>How many dice:</value>
   </data>
+  <data name="NumberOfSides.Text" xml:space="preserve">
+    <value>How many sides of dice:</value>
+  </data>
+  <data name="Roll.Content" xml:space="preserve">
+    <value>Roll</value>
+  </data>
   <data name="Rolled.Text" xml:space="preserve">
     <value>You rolled:</value>
   </data>
