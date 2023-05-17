@@ -42,7 +42,7 @@
                             <TextBlock
                                 Text="{Binding}"
                                 Style="{ThemeResource TitleTextBlockStyle}"
-                                Margin="{StaticResource SmallLeftRightMargin}" />
+                                Margin="{StaticResource SmallLeftTopRightBottomMargin}" />
                         </Grid>
                     </DataTemplate>
                 </behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
