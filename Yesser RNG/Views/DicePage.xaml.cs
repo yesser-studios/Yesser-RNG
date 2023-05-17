@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-
+using System.Text;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -54,10 +55,10 @@ namespace Yesser_RNG.Views
                 else
                     text += $"; {i}";
             }
-            RolledBox.Text = text;
-            MaxBox.Text = rolled.Max().ToString();
-            AverageBox.Text = rolled.Average().ToString();
-            MinBox.Text = rolled.Min().ToString();
+            RolledBlock.Text = text;
+            MaxBlock.Text = rolled.Max().ToString();
+            AverageBlock.Text = rolled.Average().ToString();
+            MinBlock.Text = rolled.Min().ToString();
 
             AfterRollGrid.Visibility = Visibility.Visible;
         }
@@ -67,6 +68,23 @@ namespace Yesser_RNG.Views
             TextBox box = sender as TextBox;
             if (box == null) return;
             box.SelectAll();
+        }
+
+        private void CopyResultB_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append($"Rolled: \n {RolledBlock.Text}");
+            builder.Append($"Max: \n {MaxBlock.Text}");
+            builder.Append($"Average: \n {AverageBlock.Text}");
+            builder.Append($"Min: \n {MinBlock.Text}");
+
+            DataPackage package = new DataPackage()
+            {
+                RequestedOperation = DataPackageOperation.Copy
+            };
+
+            package.SetText(builder.ToString());
         }
     }
 }

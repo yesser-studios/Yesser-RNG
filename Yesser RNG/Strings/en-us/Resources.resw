@@ -198,4 +198,7 @@
   <data name="Rolled.Text" xml:space="preserve">
     <value>You rolled:</value>
   </data>
+  <data name="CopyB.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Copy</value>
+  </data>
 </root>

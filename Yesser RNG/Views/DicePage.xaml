@@ -7,50 +7,57 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <StackPanel x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid x:Name="mainGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+    <ScrollViewer HorizontalScrollMode="Disabled" Margin="0,25,0,0">
+        <StackPanel x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid x:Name="mainGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <TextBlock x:Uid="NumberOfDice" Text="Number of dice:" Grid.Column="0" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <muxc:NumberBox x:Name="NumberDiceBox" SpinButtonPlacementMode="Compact" AcceptsExpression="True" Value="1" Grid.Column="1" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock x:Uid="NumberOfSides" Text="Number of sides:" Grid.Column="0" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <muxc:NumberBox x:Name="NumberSidesBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="6" Maximum="2000000000" Grid.Column="1" Grid.Row="0" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
-            <TextBlock x:Uid="NumberOfSides" Text="Number of sides:" Grid.Column="0" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <muxc:NumberBox x:Name="NumberSidesBox" SpinButtonPlacementMode="Compact" AcceptsExpression="True" Value="6" Grid.Column="1" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBlock x:Uid="NumberOfDice" Text="Number of dice:" Grid.Column="0" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <muxc:NumberBox x:Name="NumberDiceBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="1" Maximum="3000" Grid.Column="1" Grid.Row="1" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
-            <Button x:Uid="Roll" x:Name="RollB" Content="Roll" Grid.Row="2" Grid.ColumnSpan="2" Width="100" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Style="{StaticResource AccentButtonStyle}" Click="RollB_Click" />
-        </Grid>
+                <Button x:Uid="Roll" x:Name="RollB" Content="Roll" Grid.Row="2" Grid.ColumnSpan="2" Width="200" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Style="{StaticResource AccentButtonStyle}" Click="RollB_Click" />
+            </Grid>
             <!--Visibility="Collapsed"-->
-        <Grid x:Name="AfterRollGrid" Visibility="Collapsed">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            
-            <TextBlock x:Uid="Rolled" Text="You rolled:" Grid.Column="0" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <TextBox x:Name="RolledBox" IsReadOnly="True" Grid.Column="1" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
-            
-            <TextBlock x:Uid="Max" Text="Highest number you rolled:" Grid.Column="0" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <TextBox x:Name="MaxBox" IsReadOnly="True" Grid.Column="1" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
+            <Grid x:Name="AfterRollGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <TextBlock x:Uid="Average" Text="Average of rolls:" Grid.Column="0" Grid.Row="2" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <TextBox x:Name="AverageBox" IsReadOnly="True" Grid.Column="1" Grid.Row="2" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
+                <TextBlock x:Uid="Rolled" Text="You rolled:" Grid.Column="0" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                <TextBlock x:Name="RolledBlock" Grid.Column="1" Grid.Row="0" Margin="5" Width="200" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
 
-            <TextBlock x:Uid="Min" Text="Lowest number you rolled:" Grid.Column="0" Grid.Row="3" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-            <TextBox x:Name="MinBox" IsReadOnly="True" Grid.Column="1" Grid.Row="3" Margin="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
-        </Grid>
-    </StackPanel>
+                <TextBlock x:Uid="Max" Text="Highest number you rolled:" Grid.Column="0" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <TextBlock x:Name="MaxBlock" Grid.Column="1" Grid.Row="1" Margin="5" Width="200" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
+
+                <TextBlock x:Uid="Average" Text="Average of rolls:" Grid.Column="0" Grid.Row="2" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <TextBlock x:Name="AverageBlock" Grid.Column="1" Grid.Row="2" Margin="5" Width="200" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
+
+                <TextBlock x:Uid="Min" Text="Lowest number you rolled:" Grid.Column="0" Grid.Row="3" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <TextBlock x:Name="MinBlock" Grid.Column="1" Grid.Row="3" Margin="5" Width="200" TextWrapping="WrapWholeWords" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="OutBox_Clicked" />
+
+                <Button x:Name="CopyResultB" x:Uid="CopyB" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Click="CopyResultB_Click" Width="25" Height="25" ToolTipService.ToolTip="Copy">
+                    <SymbolIcon Symbol="Copy" />
+                </Button>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
 </Page>
