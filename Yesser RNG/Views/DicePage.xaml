@@ -21,10 +21,10 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock x:Uid="NumberOfSides" Text="Number of sides:" Grid.Column="0" Grid.Row="0" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                <muxc:NumberBox x:Name="NumberSidesBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="6" Maximum="2000000000" Grid.Column="1" Grid.Row="0" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <muxc:NumberBox x:Name="NumberSidesBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="6" Minimum="1" Maximum="2000000000" Grid.Column="1" Grid.Row="0" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
                 <TextBlock x:Uid="NumberOfDice" Text="Number of dice:" Grid.Column="0" Grid.Row="1" Margin="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                <muxc:NumberBox x:Name="NumberDiceBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="1" Maximum="3000" Grid.Column="1" Grid.Row="1" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <muxc:NumberBox x:Name="NumberDiceBox" SpinButtonPlacementMode="Inline" AcceptsExpression="True" Value="1" Minimum="1" Maximum="3000" Grid.Column="1" Grid.Row="1" Margin="5" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
                 <Button x:Uid="Roll" x:Name="RollB" Content="Roll" Grid.Row="2" Grid.ColumnSpan="2" Width="200" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Style="{StaticResource AccentButtonStyle}" Click="RollB_Click" />
             </Grid>
