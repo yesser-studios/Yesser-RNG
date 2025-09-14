@@ -10,7 +10,7 @@
   <Identity
     Name="25078YesserStudios.YesserRNG"
     Publisher="CN=197534C1-4006-44A2-BFCD-CA87D3F8D948"
-    Version="0.0.1.0" />
+    Version="0.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="7756713b-aa58-465d-8ee9-d221b043cb6d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
